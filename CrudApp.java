@@ -82,16 +82,13 @@ public class CrudApp extends JFrame {
 		add(scrollPane, BorderLayout.CENTER);
 		add(panelButtons, BorderLayout.SOUTH);
 	}
-
 	private void addEstado() {
-	    CadastroEstadoDialog dialog = new CadastroEstadoDialog(this);
-	    dialog.setVisible(true);
-
-	    // 🔹 Se o usuário cadastrou um novo estado, recarregar a lista sem remover a tabela
-	    if (dialog.isConfirmado() && mainPanel.getComponentCount() > 0 && mainPanel.getComponent(0) instanceof EstadoPainel) {
-	        ((EstadoPainel) mainPanel.getComponent(0)).loadEstados();
-	    }
+	    mainPanel.removeAll();
+	    mainPanel.add(new EstadoPainel(), BorderLayout.CENTER);
+	    mainPanel.revalidate();
+	    mainPanel.repaint();
 	}
+
 
 
 	private void addCidade() {

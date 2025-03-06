@@ -2,7 +2,6 @@ package br.com.crudcidades;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.List;
 
 public class CadastroEstadoDialog extends JDialog {
     private JTextField codigoUfField, nomeField, siglaField;
@@ -67,16 +66,7 @@ public class CadastroEstadoDialog extends JDialog {
         }
     }
 
-
     public boolean isConfirmado() {
         return confirmado;
-    }
-
-    public Estado getEstado() {
-        return new Estado(
-                Integer.parseInt(codigoUfField.getText()),
-                nomeField.getText(),
-                siglaField.getText().toUpperCase()
-        );
     }
 }
